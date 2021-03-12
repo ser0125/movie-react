@@ -1,0 +1,22 @@
+{
+    "name": "movie-react",
+    "scripts": {
+        "start": "webpack serve --open --config ./build-utils/webpack.dev.js",
+        "build": "webpack --config ./build-utils/webpack.prod.js"
+    },
+    "dependencies": {
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1"
+    },
+    "devDependencies": {
+        "@types/react": "^17.0.3",
+        "@types/react-dom": "^17.0.2",
+        "html-webpack-plugin": "^5.3.1",
+        "ts-loader": "^8.0.18",
+        "typescript": "^4.2.3",
+        "webpack": "^5.24.4",
+        "webpack-cli": "^4.5.0",
+        "webpack-dev-server": "^3.11.2",
+        "webpack-merge": "^5.7.3"
+    }
+}
