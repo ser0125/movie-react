@@ -2,7 +2,7 @@
     "name": "movie-react",
     "scripts": {
         "start": "webpack serve --open --config ./build-utils/webpack.dev.js",
-        "build": "webpack --config ./build-utils/webpack.prod.js"
+        "build": "webpack --config ./build-utils/webpack.prod.j"
     },
     "dependencies": {
         "react": "^17.0.1",
