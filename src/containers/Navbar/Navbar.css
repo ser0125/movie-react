@@ -1,0 +1,13 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+}
+
+.Title {
+    display: flex;
+    flex: 1;
+}
+
+.SearchSection {
+    display: flex;
+}

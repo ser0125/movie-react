@@ -1,0 +1,15 @@
+.SearchInput {
+    width: 0px;
+    padding: 0px;
+    border: 0px;
+    transition: width 1s;
+}
+
+.SearchInputVisible {
+    width: 200px;
+    transition: width 1s;
+}
+
+.SearchIcon {
+    cursor: pointer;
+}
