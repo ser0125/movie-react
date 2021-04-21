@@ -7,6 +7,7 @@ interface LinkProps {
   bold?: boolean;
   href?: string;
   theme: object;
+  decoration: string;
 }
 
 const CommonLink = styled(Link)<LinkProps>`
@@ -18,8 +19,8 @@ const CommonLink = styled(Link)<LinkProps>`
       ? props.theme.statusColors[props.color]
       : props.theme.linkColor};
   font-weight: ${(props): string => (props.bold ? "bold" : "normal")};
+  text-decoration: ${(props) => (props.decoration ? props.decoration : 'underline')};
   &:hover {
-    text-decoration: underline;
     color: ${(props): string =>
       props.color
         ? darken(

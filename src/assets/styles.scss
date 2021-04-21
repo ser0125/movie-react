@@ -1,6 +1,9 @@
 :global {
-  @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
-  @import url("https://fonts.googleapis.com/css?family=Quicksand:wght@500|Varela+Round&display=swap");
+  @font-face {
+    font-family: "Ranchers";
+    src: local("Ranchers"),
+     url("fonts/Ranchers-Regular.ttf") format("truetype");
+   }
 
   @import "./variables.scss";
 

@@ -1,13 +1,25 @@
 .Navbar {
     display: flex;
     align-items: center;
+    background-color: rgb(20, 20, 20);
+}
+
+.TitleContainer {
+    display: flex;
+    flex: 1;
+    align-items: center;
 }
 
 .Title {
-    display: flex;
-    flex: 1;
+    padding-left: 15px;
+    font-size: 30px;
+    font-family: "SigmarOne", sans-serif;
 }
 
 .SearchSection {
     display: flex;
+}
+
+.MenuList {
+    list-style-type: none;
 }

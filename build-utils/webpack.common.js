@@ -13,9 +13,13 @@ module.exports = {
   module: {
     rules: [
       {
-          test: /\.tsx?$/,
-          loader: "ts-loader"
-        }
+        test: /\.tsx?$/,
+        loader: "ts-loader"
+      },
+      {
+        test: /\.(woff|woff2|eot|svg|ttf)$/,
+        loader: "file-loader"
+      }
     ]
   },
   plugins: [htmlPlugin]

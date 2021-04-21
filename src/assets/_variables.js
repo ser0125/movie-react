@@ -1,6 +1,6 @@
 //COLORS
 const theme = {
-"firstColor": "#0ac972",
+"whiteColor": "#ffffff",
 "firstColorAlt": "#259943",
 "secondColor": "#039b46",
 "thirdColor": "#414c5e",
@@ -19,7 +19,7 @@ const theme = {
 "darkColor": "#1e2024",
 
 "statusColors": {
-  "first": "#0ac972",
+  "white": "#ffffff",
   "second": "#039b46",
   "third": "#414c5e",
   "fourth": "#1e2024",
@@ -30,9 +30,6 @@ const theme = {
   "danger": "#f53659",
   "default": "#f0f0f0"
 },
-
-"darkenPercent": "0.1",
-"darkenPercentLink": "0.15",
 
 // BORDER-RADIUS
 "borderRadiusContainer": "0.7rem",
