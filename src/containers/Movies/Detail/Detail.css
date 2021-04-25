@@ -4,3 +4,11 @@
     display: flex;
     justify-content: center;
 }
+
+.MediaContainer {
+    display: flex;
+}
+
+.ImagePoster {
+    padding-right: 10px;
+}

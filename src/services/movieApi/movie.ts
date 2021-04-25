@@ -44,11 +44,22 @@ const movieApi = () => {
         }
     };
 
+    const getYoutubeTrailer = async (id) => {
+        const url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}&language=en-US`;
+        try {
+            const response = await axios.get(url);
+            return response.data;
+        } catch (error){
+         throw error;
+        }
+    };
+
     return {
         getPopularMovies,
         getTopRatedMovies,
         getUpcomingMovies,
         getMovieDetail,
+        getYoutubeTrailer,
     }
 };
 
