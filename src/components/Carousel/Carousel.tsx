@@ -2,8 +2,9 @@ import { ChevronLeft, ChevronRight } from "react-feather";
 import * as React from 'react';
 import classes from './Carousel.css';
 import { IMAGE_URL } from "../../utils/constants";
+import {Link} from 'react-router-dom';
 
-const Carousel = ({items, sectionTitle}) => {
+const Carousel = ({items, sectionTitle, type}) => {
     const [positionX, setPositionX] = React.useState<any | number>(0);
     let arrowLeft = positionX !== 0 ? classes.ArrowLeft : `${classes.ArrowLeft} ${classes.ArrowLeftHidden}`;
     let arrowRight = positionX !== -5460 ? classes.ArrowRight : `${classes.ArrowLeft} ${classes.ArrowRightHidden}`;
@@ -26,10 +27,12 @@ const Carousel = ({items, sectionTitle}) => {
                     {
                     items && items.map((elem, index) => {
                         return (
-                            <div key={index} className={classes.CardImage}>
-                                <img src={`${IMAGE_URL}/${elem.poster_path}`} />
-                                <h1>{elem.title || elem.name}</h1>
-                            </div>
+                            <Link key={index} to={`/${type}/${elem.id}`}>
+                                <div className={classes.CardImage}>
+                                    <img src={`${IMAGE_URL}/${elem.poster_path}`} />
+                                    <h1>{elem.title || elem.name}</h1>
+                                </div>
+                            </Link>
                             );
                         }
                     )}

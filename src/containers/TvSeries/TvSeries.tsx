@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Carousel from '../../components/Carousel/Carousel';
-import movieApi from '../../services/movieApi';
+import movieApi from '../../services/movieApi/serie';
 
 const TvSeries = () => {
     const [popularSeries, setPopularSeries] = React.useState(null);
@@ -30,9 +30,9 @@ const TvSeries = () => {
 
     return (
         <div>
-            <Carousel items={popularSeries} sectionTitle='Popular Series' />
-            <Carousel items={topRatedSeries} sectionTitle='Top Rated Series' />
-            <Carousel items={onTheAirSeries} sectionTitle='On The Air Series' />
+            <Carousel items={popularSeries} sectionTitle='Popular Series' type='serie'/>
+            <Carousel items={topRatedSeries} sectionTitle='Top Rated Series' type='serie' />
+            <Carousel items={onTheAirSeries} sectionTitle='On The Air Series' type='serie' />
         </div>
     )
 };

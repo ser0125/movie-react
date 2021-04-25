@@ -1,0 +1,6 @@
+.Container {
+    background-color: #d7d7d7;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}

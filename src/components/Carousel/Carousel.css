@@ -41,9 +41,7 @@
     flex-direction: column;
     padding: 20px;
     width: 330px;
-    animation-name: zoomOutToCard;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    transition: all 1s ease;
 }
 
 .CardImage img {
@@ -53,21 +51,10 @@
 }
 
 .CardImage:hover {
-    animation-name: zoomInToCard;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+    transform: scale(1.2);
 }
 
 .CardContainer{
     display: flex;
+    transition: all 1s ease;
 }
-
-@keyframes zoomInToCard {
-    from {transform: scale(1);}
-    to{transform: scale(1.2);}
-  }
-
-@keyframes zoomOutToCard {
-    from {transform: scale(1.2);}
-    to{transform: scale(1);}
-  }
