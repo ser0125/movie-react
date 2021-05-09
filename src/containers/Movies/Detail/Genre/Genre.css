@@ -1,0 +1,66 @@
+.Genre {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    color: white;
+}
+
+.Action {
+    border: 1px solid #6d0c03;
+    background-color: #ff1500;
+}
+
+.Romance {
+    border: 1px solid #7a0052;
+    background-color: #ff00aa;
+}
+
+.ScienceFiction {
+    border: 1px solid #028021;
+    background-color: #00ff40;
+}
+
+.Adventure {
+    border: 1px solid #8b3401;
+    background-color: #ff5e00;
+}
+
+.Fantasy {
+    border: 1px solid #948501;
+    background-color: #ffe600;
+}
+
+.Crime {
+    border: 1px solid #002395;
+    background-color: #003cff;
+}
+
+.Thriller {
+    border: 1px solid #411800;
+    background-color: #8b3401;
+}
+
+.Animation {
+    border: 1px solid #02b49c;
+    background-color: #00ffdd;
+}
+
+.Horror {
+    border: 1px solid #61018d;
+    background-color: #b004ff;
+}
+
+.Drama {
+    border: 1px solid #609b02;
+    background-color: #9fff04;
+}
+
+.Comedy {
+    border: 1px solid #970323;
+    background-color: #ff043a;
+}
+
+.Default {
+    border: 1px solid #000000;
+    background-color: #000000;
+}

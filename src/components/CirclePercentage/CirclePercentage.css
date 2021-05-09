@@ -1,14 +1,17 @@
 .SingleChart {
-    width: 30%;
+  width: 60px;
+  display: inline-block;
+  margin: 10px;
 }
 
 .CircularChart {
-  max-height: 250px;
+  width: 60px;
+  height: 60px;
 }
 
 .CircleBg {
     fill: none;
-    stroke: #eee;
+    stroke: #000;
     stroke-width: 3.8;
 }
 
@@ -17,8 +20,19 @@
     stroke-width: 2.8;
     stroke-linecap: round;
     animation: progress 1s ease-out forwards;
-    stroke: #ff9f00;
   }
+
+.CircleGreen {
+  stroke: #1caa09;
+}
+
+.CircleYellow {
+  stroke: #ff9f00;
+}
+
+.CircleRed {
+  stroke: #ff1500;
+}
 
 .TextPercentage {
     fill: #666;
