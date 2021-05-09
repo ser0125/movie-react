@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { darken } from "polished";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { darken } from 'polished';
+import { Link } from 'react-router-dom';
 
 interface LinkProps {
   color?: string;
@@ -18,7 +18,7 @@ const CommonLink = styled(Link)<LinkProps>`
     props.color
       ? props.theme.statusColors[props.color]
       : props.theme.linkColor};
-  font-weight: ${(props): string => (props.bold ? "bold" : "normal")};
+  font-weight: ${(props): string => (props.bold ? 'bold' : 'normal')};
   text-decoration: ${(props) => (props.decoration ? props.decoration : 'underline')};
   &:hover {
     color: ${(props): string =>

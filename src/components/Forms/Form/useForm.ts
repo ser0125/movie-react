@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import { validateField, validateAll } from "../../../validation/validation";
+import { validateField, validateAll } from '../../../validation/validation';
 
 const useForm = (callbackSubmit, initialState) => {
   const [fields, setFields] = useState(initialState);

@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 import { IMAGE_URL } from '../../../utils/constants';
 import classes from './Detail.css';
 
-interface SerieDetail {
+interface SerieDetailType {
     id: number;
     name: string;
     vote_average: number;
@@ -20,30 +20,34 @@ interface SerieDetail {
 }
 
 const SerieDetail = () => {
-    let { id } = useParams();
-    const [serieDetail, setMovieDetail] = React.useState<SerieDetail>(null);
+  const { id } = useParams();
+  const [serieDetail, setMovieDetail] = React.useState<SerieDetailType>(null);
 
-    const fetchDetailSerie = async () => {
-        const response = await movieApi.getSerieDetail(id);
-        setMovieDetail(response);
-    };
+  const fetchDetailSerie = async () => {
+    const response = await movieApi.getSerieDetail(id);
+    setMovieDetail(response);
+  };
 
+  React.useEffect(() => {
+    fetchDetailSerie();
+  }, []);
 
-    React.useEffect(() => {
-        fetchDetailSerie();
-    }, []);
-
-    return (
+  return (
         <div className={classes.Container}>
             {
                 serieDetail &&
                 <div>
-                    <h1>{serieDetail.name}</h1>
-                    <img src={`${IMAGE_URL}/${serieDetail.poster_path}`} />
+                    <div>
+                        <h1>{serieDetail.name}</h1>
+                        <img src={`${IMAGE_URL}/${serieDetail.poster_path}`} />
+                    </div>
+                    <div>
+                    <h4>{serieDetail.overview}</h4>
+                    </div>
                 </div>
             }
         </div>
-    )
+  );
 };
 
 export default SerieDetail;

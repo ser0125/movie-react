@@ -4,8 +4,10 @@ import YoutubeEmbed from '../../../components/YoutubeEmbed/YoutubeEmbed';
 import { useParams } from 'react-router-dom';
 import { IMAGE_DETAIL_URL } from '../../../utils/constants';
 import classes from './Detail.css';
+import { BarChart } from 'react-feather';
+import CirclePercentage from '../../../components/CirclePercentage/CirclePercentage';
 
-interface MovieDetail {
+interface MovieDetailType {
     id: number;
     title: string;
     vote_average: number;
@@ -28,39 +30,49 @@ interface YoutubeTrailer {
 }
 
 const MovieDetail = () => {
-    let { id } = useParams();
-    const [movieDetail, setMovieDetail] = React.useState<MovieDetail>(null);
-    const [youtubeTrailer, setYoutubeTrailer] = React.useState<Array<YoutubeTrailer>>(null);
+  const { id } = useParams();
+  const [movieDetail, setMovieDetail] = React.useState<MovieDetailType>(null);
+  const [youtubeTrailer, setYoutubeTrailer] = React.useState<Array<YoutubeTrailer>>(null);
 
-    React.useEffect(() => {
-        fetchDetailMovie();
-        fetchYoutubeTrailer();
-    }, []);
+  React.useEffect(() => {
+    fetchDetailMovie();
+    fetchYoutubeTrailer();
+  }, []);
 
-    const fetchDetailMovie = async () => {
-        const response = await movieApi.getMovieDetail(id);
-        setMovieDetail(response);
-    };
+  const fetchDetailMovie = async () => {
+    const response = await movieApi.getMovieDetail(id);
+    setMovieDetail(response);
+  };
 
-    const fetchYoutubeTrailer = async () => {
-        const response = await movieApi.getYoutubeTrailer(id);
-        setYoutubeTrailer(response.results);
-    };
+  const fetchYoutubeTrailer = async () => {
+    const response = await movieApi.getYoutubeTrailer(id);
+    setYoutubeTrailer(response.results);
+  };
 
-    return (
+  const genres = movieDetail && movieDetail.genres.map(genre => {
+    return <span key={genre.id}>{genre.name}</span>;
+  });
+
+  return (
         <div className={classes.Container}>
             {
                 movieDetail && youtubeTrailer &&
-                <div>
+                <div className={classes.DetailContainer}>
+                  <div className={classes.TitleInfo}>
                     <h1>{movieDetail.title}</h1>
-                    <div className={classes.MediaContainer}>
+                
+                  </div>
+                  <div className={classes.MediaContainer}>
                         <img className={classes.ImagePoster} src={`${IMAGE_DETAIL_URL}/${movieDetail.poster_path}`} />
                         <YoutubeEmbed keyid={youtubeTrailer[0].key} />
-                    </div>
+                  </div>
+                  <div>
+                      <h4>{movieDetail.overview}</h4>
+                  </div>
                 </div>
             }
         </div>
-    )
+  );
 };
 
 export default MovieDetail;
